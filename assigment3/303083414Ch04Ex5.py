@@ -11,14 +11,30 @@ while minutes < 0 or minutes > 59:
 
 pen = turtle.Turtle()
 
-pen.shape( 'arrow' )
 pen.tracer( 0 )
 pen.speed( 0 )
-pen.penup()
-pen.goto( 0, -180 )
-pen.pendown()
-pen.color( 'black' )
-pen.circle( 180 )
+
+for i in range( 12 ):
+    pen.pensize(2)
+    pen.penup()
+    pen.forward( 180 )
+    pen.pendown()
+    pen.forward( 30 )
+    pen.penup()
+    pen.forward( 40 )
+    pen.backward( 250 )
+    pen.left( 360 / 12 )
+    pen.pensize(1)
+
+for i in range( 60 ):
+    pen.penup()
+    pen.forward( 180 )
+    pen.pendown()
+    pen.forward( 22 )
+    pen.penup()
+    pen.forward( 48 )
+    pen.backward( 250 )
+    pen.left( 360 / 60 )
 
 pen.color( 'red' )
 pen.penup()

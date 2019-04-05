@@ -1,14 +1,23 @@
-economical = 6
-consumption = int( input( 'Please enter your fuel consumption: ' ) )
+# Calculates if there is an extra payment for kids
+def calculate_kids_payment( kids ):
+    return kids * 150
 
-if consumption > economical:
-    print 'You\'re driving in an un economic mode. If you continue to do so, the benefit will be canceled.'
-    consumption = int( input( 'Please enter your fuel consumption: ' ) )
 
-    while consumption > economical:
-        print 'Please keep slowing down the car'
-        consumption = int( input( 'Please enter your fuel consumption again:' ) )
+# Calculates there is a need to complete the income
+def complete_income( income ):
+    if income < 5000:
+        return 5000 - income
 
-    print 'Now you are driving economic! Keep on!'
-else:
-    print 'You are driving economic! Keep on!'
+    return 0
+
+
+# Main program
+def main( ):
+    income = float( input( 'Please enter your income: ' ) )
+    under_eighteen_kids = int( input( 'Please enter the number of kids under the age of 18: ' ) )
+    income_completion = complete_income( income )
+    extras_for_kids = calculate_kids_payment( under_eighteen_kids )
+    print('Total extra for salary is ' + str( extras_for_kids + income_completion ))
+
+
+main()
